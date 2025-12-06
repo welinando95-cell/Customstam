@@ -1,1 +1,20 @@
-https://raw.githubusercontent.com/welinando95-cell/Aimbot/refs/heads/main/Aimbot
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local me = Players.LocalPlayer
+local sprintThing = ReplicatedStorage.Systems.Character.Game.Sprinting
+local mod = require(sprintThing)
+
+local function doEveryFrame()
+    if not me.Character or not me.Character:FindFirstChild("Humanoid") then
+        return
+    end
+    
+    mod.SprintSpeed = 26.5
+    mod.StaminaGain = 75
+    mod.StaminaLoss = -1
+    mod.MaxStamina = 100
+end
+
+RunService.RenderStepped:Connect(doEveryFrame)
