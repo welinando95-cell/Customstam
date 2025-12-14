@@ -13,7 +13,7 @@ local function doEveryFrame()
     
     mod.SprintSpeed = 26.5
     mod.StaminaGain = 100
-    mod.StaminaLoss = 1
+    mod.StaminaLoss = 8
     mod.MaxStamina = 100
 end
 
